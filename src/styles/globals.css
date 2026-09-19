@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fff9fc;
+  --surface: #ffffff;
+  --surface-soft: #fff1f7;
+
+  --brand-50: #fff1f7;
+  --brand-100: #ffe4ef;
+  --brand-200: #fecddf;
+  --brand-300: #fda4c4;
+  --brand-400: #fb6f9f;
+  --brand-500: #ec407a;
+  --brand-600: #c81e5b;
+  --brand-700: #9d174d;
+  --brand-800: #73123b;
+  --brand-900: #3c081f;
+
+  --accent: #c026d3;
+
+  --text: #180b12;
+  --text-soft: #66525c;
+  --border: #f4dce7;
+
+  --footer-from: #200611;
+  --footer-via: #4a0a29;
+  --footer-to: #71133f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--brand-200);
+  color: var(--brand-900);
+}
+
+.brand-text {
+  background: linear-gradient(
+    90deg,
+    var(--brand-700),
+    var(--brand-500),
+    var(--accent)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.premium-grid {
+  background-image:
+    linear-gradient(rgba(157, 23, 77, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 23, 77, 0.035) 1px, transparent 1px);
+
+  background-size: 46px 46px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+}
