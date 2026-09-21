@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-import './App.css'
+import { fetchSiteData } from "./redux/slices/siteDataSlice";
+import Home from "./pages/public/Home";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const dispatch = useDispatch();
 
-  return (
-    <>
-    <h1>hello</h1>
-    </>
-  )
-}
+  useEffect(() => {
+    dispatch(fetchSiteData());
+  }, [dispatch]);
 
-export default App
+  return <Home />;
+};
+
+export default App;

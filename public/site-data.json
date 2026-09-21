@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "siteName": "Anupam Portfolio",
+    "developerName": "Anupam Katiyar",
+    "professionalTitle": "Full Stack Developer"
+  },
+  "hero": {
+    "badge": "Available for opportunities",
+    "heading": "I build modern digital products.",
+    "description": "Full Stack Developer focused on scalable and production-ready web applications.",
+    "primaryButton": "View My Work",
+    "secondaryButton": "Let's Talk"
+  }
+}

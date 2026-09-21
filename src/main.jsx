@@ -1,23 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { RouterProvider } from "react-router/dom";
-import { HelmetProvider } from "react-helmet-async";
 
-import { store } from "./app/store";
-import { router } from "./app/router";
+import App from "./App";
+import { store } from "./redux/store";
 
 import "./styles/globals.css";
 
-ReactDOM.createRoot(
-  document.getElementById("root")
-).render(
-  <React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
     <Provider store={store}>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
+      <App />
     </Provider>
-  </React.StrictMode>
+  </StrictMode>
 );
