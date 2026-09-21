@@ -11,7 +11,10 @@ const App = () => {
     dispatch(fetchSiteData());
   }, [dispatch]);
 
-  return <Home />;
+  return(
+    <Home />
+  ) 
+     
 };
 
 export default App;
