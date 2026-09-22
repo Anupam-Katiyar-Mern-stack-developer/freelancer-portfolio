@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { fetchSiteData } from "./redux/slices/siteDataSlice";
-import Home from "./pages/public/Home";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,7 @@ const App = () => {
     dispatch(fetchSiteData());
   }, [dispatch]);
 
-  return(
-    <Home />
-  ) 
-     
+  return <AppRoutes />;
 };
 
 export default App;

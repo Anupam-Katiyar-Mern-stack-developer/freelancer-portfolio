@@ -2,13 +2,633 @@
   "settings": {
     "siteName": "Anupam Portfolio",
     "developerName": "Anupam Katiyar",
-    "professionalTitle": "Full Stack Developer"
+    "professionalTitle": "Full Stack Developer",
+    "profileImage": "/profile.webp",
+    "availableForWork": true
   },
+
+  "navigation": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "About",
+      "path": "/about"
+    },
+    {
+      "label": "Skills",
+      "path": "/skills"
+    },
+    {
+      "label": "Projects",
+      "path": "/projects"
+    },
+    {
+      "label": "Case Studies",
+      "path": "/case-studies"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
+  ],
+
+  
   "hero": {
-    "badge": "Available for opportunities",
-    "heading": "I build modern digital products.",
-    "description": "Full Stack Developer focused on scalable and production-ready web applications.",
-    "primaryButton": "View My Work",
-    "secondaryButton": "Let's Talk"
+    "badge": "Available for freelance & job opportunities",
+
+    "intro": "Hi, I'm",
+
+    "heading": "I build digital products",
+
+    "highlight": "that feel fast, scale well & create impact.",
+
+    "description": "Full Stack Developer specializing in React, Node.js and modern backend systems. I build fast, scalable and production-ready applications.",
+
+    "roles": [
+      "Full Stack Developer",
+      "MERN Developer",
+      "Backend Developer",
+      "Freelance Developer"
+    ],
+
+    "primaryButton": "Explore My Work",
+    "primaryLink": "#projects",
+
+    "secondaryButton": "Let's Work Together",
+    "secondaryLink": "#contact"
+  
+},
+
+  "about": {
+    "eyebrow": "About Me",
+    "heading": "I turn ideas into",
+    "highlight": "reliable digital products.",
+    "description": "I'm a Full Stack Developer focused on building scalable, maintainable and user-friendly web applications. I enjoy solving real business problems through clean architecture, modern interfaces and production-ready backend systems.",
+
+    "secondDescription": "My goal is not just to write code, but to build products that are fast, structured, easy to maintain and useful for real users.",
+
+    "availability": "Open to freelance projects & job opportunities",
+
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Projects Built"
+      },
+      {
+        "value": "1+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "100%",
+        "label": "Commitment"
+      }
+    ],
+
+    "highlights": [
+      "Production-ready applications",
+      "Clean & scalable architecture",
+      "Responsive modern interfaces",
+      "REST APIs & backend systems"
+    ]
+  },
+  
+  "skills": {
+    "eyebrow": "My Skills",
+    "heading": "Technologies I use to",
+    "highlight": "build modern products.",
+    "description": "A practical stack I use for building responsive frontends, scalable APIs, databases and production-ready applications.",
+
+    "categories": [
+      "All",
+      "Frontend",
+      "Backend",
+      "Database",
+      "Tools"
+    ],
+
+    "items": [
+      {
+        "name": "React",
+        "icon": "SiReact",
+        "category": "Frontend",
+        "level": "Primary"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "SiJavascript",
+        "category": "Frontend",
+        "level": "Primary"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "SiTailwindcss",
+        "category": "Frontend",
+        "level": "Primary"
+      },
+      {
+        "name": "Redux Toolkit",
+        "icon": "SiRedux",
+        "category": "Frontend",
+        "level": "Primary"
+      },
+
+      {
+        "name": "Node.js",
+        "icon": "SiNodedotjs",
+        "category": "Backend",
+        "level": "Primary"
+      },
+      {
+        "name": "Express.js",
+        "icon": "SiExpress",
+        "category": "Backend",
+        "level": "Primary"
+      },
+      {
+        "name": "Python",
+        "icon": "SiPython",
+        "category": "Backend",
+        "level": "Working Knowledge"
+      },
+
+      {
+        "name": "PostgreSQL",
+        "icon": "SiPostgresql",
+        "category": "Database",
+        "level": "Primary"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "SiMongodb",
+        "category": "Database",
+        "level": "Working Knowledge"
+      },
+      {
+        "name": "MySQL",
+        "icon": "SiMysql",
+        "category": "Database",
+        "level": "Working Knowledge"
+      },
+
+      {
+        "name": "Git",
+        "icon": "SiGit",
+        "category": "Tools",
+        "level": "Primary"
+      },
+      {
+        "name": "GitHub",
+        "icon": "SiGithub",
+        "category": "Tools",
+        "level": "Primary"
+      },
+      {
+        "name": "Postman",
+        "icon": "SiPostman",
+        "category": "Tools",
+        "level": "Primary"
+      },
+      {
+        "name": "Docker",
+        "icon": "SiDocker",
+        "category": "Tools",
+        "level": "Learning"
+      }
+    ]
+  },
+
+  "projects": {
+    "eyebrow": "Selected Work",
+    "heading": "Projects that show",
+    "highlight": "how I solve real problems.",
+    "description": "A selection of applications where I worked on product flow, frontend experience, backend architecture, APIs, databases and deployment.",
+
+    "items": [
+      {
+        "title": "Foodie Delivery Platform",
+        "slug": "foodie-delivery-platform",
+        "shortDescription": "A multi-role food delivery platform with customer, restaurant, delivery agent and admin workflows.",
+        "image": "/projects/foodie.webp",
+        "featured": true,
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "caseStudyUrl": "/case-studies/foodie-delivery-platform",
+        "technologies": [
+          "React",
+          "Redux Toolkit",
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "Socket.IO"
+        ]
+      },
+      {
+        "title": "Hospital Management System",
+        "slug": "hospital-management-system",
+        "shortDescription": "A full-stack hospital management platform with admin controls, doctors, departments, services and content management.",
+        "image": "/projects/hospital.webp",
+        "featured": true,
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "caseStudyUrl": "/case-studies/hospital-management-system",
+        "technologies": [
+          "React",
+          "Node.js",
+          "Express",
+          "MongoDB"
+        ]
+      },
+      {
+        "title": "Developer Portfolio",
+        "slug": "developer-portfolio",
+        "shortDescription": "A dynamic portfolio and mini CRM with projects, case studies, leads, clients and review collection.",
+        "image": "/projects/portfolio.webp",
+        "featured": false,
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "caseStudyUrl": "/case-studies/developer-portfolio",
+        "technologies": [
+          "React",
+          "Tailwind CSS",
+          "Redux Toolkit",
+          "Node.js",
+          "PostgreSQL"
+        ]
+      }
+    ]
+  },
+
+  "caseStudies": {
+    "eyebrow": "Case Studies",
+    "heading": "How I approach",
+    "highlight": "real product problems.",
+    "description": "A deeper look into the problems, decisions and solutions behind selected projects.",
+
+    "items": [
+      {
+        "title": "Building a Multi-Role Food Delivery Platform",
+        "slug": "foodie-delivery-platform",
+        "image": "/projects/foodie.webp",
+        "category": "Full Stack Product",
+        "problem": "Managing customers, restaurants, admins and delivery agents in one connected system.",
+        "solution": "Designed a role-based architecture with REST APIs, PostgreSQL and real-time order updates.",
+        "impact": "Created a scalable workflow that supports the complete food ordering and delivery lifecycle.",
+        "technologies": [
+          "React",
+          "Redux Toolkit",
+          "Node.js",
+          "PostgreSQL",
+          "Socket.IO"
+        ],
+        "url": "/case-studies/foodie-delivery-platform"
+      },
+
+      {
+        "title": "Designing a Hospital Management Platform",
+        "slug": "hospital-management-system",
+        "image": "/projects/hospital.webp",
+        "category": "Management System",
+        "problem": "Managing hospital services, doctors, departments and content from multiple interfaces.",
+        "solution": "Built a centralized admin-driven system with reusable APIs and modular frontend components.",
+        "impact": "Simplified management workflows and created a maintainable full-stack application.",
+        "technologies": [
+          "React",
+          "Node.js",
+          "Express",
+          "MongoDB"
+        ],
+        "url": "/case-studies/hospital-management-system"
+      }
+    ]
+  },
+
+  "testimonials": {
+    "eyebrow": "Client Feedback",
+    "heading": "What people say about",
+    "highlight": "working with me.",
+    "description": "Feedback from people I've worked with across web development and product projects.",
+
+    "items": [
+      {
+        "id": "review-01",
+        "clientName": "Rahul Sharma",
+        "designation": "Business Owner",
+        "company": "Demo Company",
+        "project": "Business Website",
+        "avatar": "",
+        "rating": 5,
+        "review": "Great communication and a structured development process. The project was delivered with a clean and responsive user experience.",
+        "verified": false
+      },
+      {
+        "id": "review-02",
+        "clientName": "Aman Verma",
+        "designation": "Founder",
+        "company": "Demo Startup",
+        "project": "MERN Application",
+        "avatar": "",
+        "rating": 5,
+        "review": "The technical approach was clear and well organized. The application was built with scalability and maintainability in mind.",
+        "verified": false
+      },
+      {
+        "id": "review-03",
+        "clientName": "Neha Singh",
+        "designation": "Project Manager",
+        "company": "Demo Agency",
+        "project": "Frontend Development",
+        "avatar": "",
+        "rating": 5,
+        "review": "Responsive communication, attention to UI details and a good understanding of the product requirements.",
+        "verified": false
+      },
+      {
+        "id": "review-04",
+        "clientName": "Arjun Patel",
+        "designation": "Entrepreneur",
+        "company": "Demo Business",
+        "project": "Backend Development",
+        "avatar": "",
+        "rating": 5,
+        "review": "The APIs were structured properly and the complete backend workflow was easy to understand and maintain.",
+        "verified": false
+      },
+      {
+        "id": "review-05",
+        "clientName": "Priya Gupta",
+        "designation": "Product Owner",
+        "company": "Demo Product",
+        "project": "Full Stack Platform",
+        "avatar": "",
+        "rating": 5,
+        "review": "A smooth collaboration from planning to implementation. The final product was responsive, fast and easy to use.",
+        "verified": false
+      },
+      {
+        "id": "review-06",
+        "clientName": "Vikas Kumar",
+        "designation": "Business Owner",
+        "company": "Demo Brand",
+        "project": "Website Development",
+        "avatar": "",
+        "rating": 5,
+        "review": "Professional work with a strong focus on performance, clean code and the overall experience of the website.",
+        "verified": false
+      }
+    ]
+  },
+
+
+  "contact": {
+    "eyebrow": "Let's Connect",
+
+    "heading": "Have something in mind?",
+
+    "highlight": "Let's talk about it.",
+
+    "description": "Whether you're hiring for a development role or looking for someone to build your next digital product, feel free to reach out.",
+
+    "email": "your@email.com",
+
+    "phone": "+91XXXXXXXXXX",
+
+    "location": "India",
+
+    "services": [
+      "Full Stack Development",
+      "MERN Stack Development",
+      "Frontend Development",
+      "Backend Development",
+      "API Development",
+      "Business Website Development"
+    ],
+
+    "budgets": [
+      "Under ₹10,000",
+      "₹10,000 - ₹25,000",
+      "₹25,000 - ₹50,000",
+      "₹50,000 - ₹1,00,000",
+      "₹1,00,000+",
+      "Let's Discuss"
+    ]
+  },
+
+  
+  "footer": {
+    "headline": "Let's build something meaningful.",
+    "description": "Open to freelance projects, internships and full-time opportunities.",
+    "copyright": "© 2026 Anupam Katiyar. All rights reserved.",
+
+    "quickLinks": [
+      { "label": "About", "path": "#about" },
+      { "label": "Skills", "path": "#skills" },
+      { "label": "Projects", "path": "#projects" },
+      { "label": "Case Studies", "path": "#case-studies" },
+      { "label": "Contact", "path": "#contact" }
+    ]
+  },
+
+
+  "aboutPage": {
+    "hero": {
+      "eyebrow": "About Me",
+      "heading": "I build products,",
+      "highlight": "not just pages.",
+      "description": "I'm a Full Stack Developer focused on building modern web applications, scalable backend systems and real-world digital products. I enjoy turning business requirements into structured, maintainable and production-ready solutions.",
+      "profileImage": "/profile.webp"
+    },
+
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Projects Built"
+      },
+      {
+        "value": "1+",
+        "label": "Years Hands-on Experience"
+      },
+      {
+        "value": "4+",
+        "label": "Production Deployments"
+      },
+      {
+        "value": "8+",
+        "label": "Technologies Used"
+      }
+    ],
+
+    "journey": {
+      "eyebrow": "My Journey",
+      "heading": "From learning development to",
+      "highlight": "building complete products.",
+      "paragraphs": [
+        "I started with programming fundamentals and gradually moved into frontend and full-stack development.",
+        "Over time, I began building complete applications with authentication, APIs, databases, admin dashboards, deployment and real-time features.",
+        "Today my main focus is building structured MERN and backend-heavy products using React, Node.js, Express and PostgreSQL."
+      ]
+    },
+
+    "work": {
+      "eyebrow": "What I Do",
+      "heading": "The kind of work",
+      "highlight": "I enjoy building.",
+      "items": [
+        {
+          "title": "Frontend Products",
+          "description": "Responsive and modern interfaces using React, Redux Toolkit and Tailwind CSS.",
+          "icon": "FiLayout"
+        },
+        {
+          "title": "Backend Systems",
+          "description": "REST APIs, authentication, business logic, PostgreSQL and scalable backend workflows.",
+          "icon": "FiServer"
+        },
+        {
+          "title": "Full Stack Platforms",
+          "description": "Complete products connecting frontend, APIs, databases, admin workflows and deployment.",
+          "icon": "FiLayers"
+        },
+        {
+          "title": "Real-time Features",
+          "description": "Live order updates, notifications and real-time interactions using Socket.IO.",
+          "icon": "FiActivity"
+        }
+      ]
+    },
+
+    "experience": [
+      {
+        "company": "ExpertsOfDeals",
+        "role": "Full Stack Developer",
+        "type": "Professional Experience",
+        "period": "2026",
+        "description": "Worked on real business web products, frontend interfaces and full-stack application development."
+      }
+    ],
+
+    "education": [
+      {
+        "degree": "Master of Computer Applications",
+        "shortName": "MCA",
+        "status": "Ongoing"
+      },
+      {
+        "degree": "Bachelor of Computer Applications",
+        "shortName": "BCA",
+        "status": "Completed"
+      }
+    ],
+
+    "process": [
+      {
+        "step": "01",
+        "title": "Understand",
+        "description": "I first understand the business problem, users and exact product requirements."
+      },
+      {
+        "step": "02",
+        "title": "Plan",
+        "description": "I break the product into modules, database relationships, APIs and development flow."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "description": "I develop reusable frontend components and structured backend services."
+      },
+      {
+        "step": "04",
+        "title": "Improve",
+        "description": "I test, optimize performance, fix edge cases and prepare the product for deployment."
+      }
+    ],
+
+    "cta": {
+      "heading": "Want to know more about my work?",
+      "description": "Explore my projects and case studies, or reach out directly.",
+      "primaryText": "View Projects",
+      "primaryLink": "/#projects",
+      "secondaryText": "Contact Me",
+      "secondaryLink": "/#contact"
+    }
+  },
+  
+  "skillsPage": {
+    "hero": {
+      "eyebrow": "Technical Skills",
+      "heading": "The stack behind",
+      "highlight": "the products I build.",
+      "description": "My primary focus is full-stack JavaScript development with React, Node.js and backend systems. I use these technologies to build responsive interfaces, APIs, databases and production-ready applications."
+    },
+
+    "capabilities": [
+      {
+        "icon": "FiMonitor",
+        "title": "Frontend Development",
+        "description": "Responsive interfaces, reusable React components, Redux state management and modern Tailwind-based UI."
+      },
+      {
+        "icon": "FiServer",
+        "title": "Backend Development",
+        "description": "REST APIs, authentication, authorization, business logic, file uploads and structured service-based architecture."
+      },
+      {
+        "icon": "FiDatabase",
+        "title": "Database Design",
+        "description": "Relational PostgreSQL schemas, SQL queries, relationships and MongoDB-based application data."
+      },
+      {
+        "icon": "FiActivity",
+        "title": "Real-time Systems",
+        "description": "Socket.IO based live order updates, notifications and real-time user experiences."
+      }
+    ],
+
+    "currentlyLearning": [
+      "Docker",
+      "CI/CD",
+      "System Design",
+      "Advanced PostgreSQL",
+      "TypeScript"
+    ],
+
+    "cta": {
+      "heading": "Want to see these skills in real projects?",
+      "description": "Explore the products and case studies where I apply these technologies to solve real problems.",
+      "button": "Explore Projects",
+      "link": "/projects"
+    }
+  },
+
+  "projectsPage": {
+    "hero": {
+      "eyebrow": "My Work",
+      "heading": "Products I've",
+      "highlight": "designed & developed.",
+      "description": "A collection of full-stack applications, backend systems and frontend products I've built while solving real technical and business problems."
+    },
+
+    "categories": [
+      "All",
+      "Full Stack",
+      "Frontend",
+      "Backend",
+      "Business Website"
+    ],
+
+    "cta": {
+      "heading": "Have a similar project in mind?",
+      "description": "Share your requirements and let's discuss how we can turn your idea into a production-ready product.",
+      "button": "Start a Project",
+      "link": "/contact?for=client"
+    }
+  }
+,
+
+  "socialLinks": {
+    "github": "https://github.com/",
+    "linkedin": "https://linkedin.com/",
+    "instagram": "https://instagram.com/"
   }
 }

@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
 
 const useSiteData = () => {
-  const { data, loading, error } = useSelector(
-    (state) => state.site
-  );
+  const siteState = useSelector((state) => state.site);
+
+  console.log("FULL SITE STATE:", siteState);
 
   return {
-    siteData: data,
-    loading,
-    error,
+    siteData: siteState?.data,
+    loading: siteState?.loading,
+    error: siteState?.error,
   };
 };
 
