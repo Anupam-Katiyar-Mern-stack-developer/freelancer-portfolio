@@ -1,42 +1,28 @@
-import { motion } from "motion/react";
-
-import {
-  FiArrowDown,
-  FiArrowUp,
-} from "react-icons/fi";
+import { Link } from "react-router";
+import { FiArrowRight } from "react-icons/fi";
 
 import useSiteData from "../../hooks/useSiteData";
-import useProjects from "../../hooks/useProjects";
 
 import SectionTitle from "../common/SectionTitle";
-import ProjectGrid from "../project/ProjectGrid";
+import ProjectCard from "../project/ProjectCard";
 
 const ProjectsSection = () => {
   const { siteData } = useSiteData();
 
   const projects = siteData?.projects;
 
-  const {
-    visibleProjects,
-    showAll,
-    toggleProjects,
-  } = useProjects(projects);
-
-  if (!projects) {
+  if (!projects?.items?.length) {
     return null;
   }
+
+  const previewProjects = projects.items.slice(0, 2);
 
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32"
+      className="bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
     >
-
-      <div className="pointer-events-none absolute -left-40 top-40 h-[400px] w-[400px] rounded-full bg-blue-100/60 blur-[140px]" />
-
-      <div className="pointer-events-none absolute -right-40 bottom-20 h-[420px] w-[420px] rounded-full bg-violet-100/60 blur-[140px]" />
-
-      <div className="relative mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl">
 
         <SectionTitle
           eyebrow={projects.eyebrow}
@@ -45,63 +31,47 @@ const ProjectsSection = () => {
           description={projects.description}
         />
 
-        <div className="mt-12 lg:mt-16">
-          <ProjectGrid
-            projects={visibleProjects}
-          />
+        <div className="mt-12 grid grid-cols-1 gap-7 md:grid-cols-2">
+
+          {previewProjects.map((project, index) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              index={index}
+            />
+          ))}
+
         </div>
 
-        {projects.items?.length > 3 && (
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{
-              opacity: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            className="mt-10 flex justify-center"
+        <div className="mt-10 flex justify-center">
+
+          <Link
+            to="/projects"
+            className="
+              group
+              inline-flex
+              items-center
+              gap-2
+              rounded-2xl
+              bg-slate-950
+              px-6
+              py-3.5
+              font-[Manrope]
+              text-sm
+              font-bold
+              text-white
+              transition
+
+              hover:-translate-y-1
+              hover:bg-blue-600
+            "
           >
-            <button
-              type="button"
-              onClick={toggleProjects}
-              className="
-                group
-                inline-flex
-                items-center
-                gap-2
-                rounded-2xl
-                border
-                border-slate-200
-                bg-white
-                px-6
-                py-3.5
-                font-[Manrope]
-                text-sm
-                font-bold
-                text-slate-700
-                shadow-sm
-                transition
-                duration-300
+            Explore All Projects
 
-                hover:-translate-y-1
-                hover:border-blue-200
-                hover:text-blue-600
-                hover:shadow-lg
-              "
-            >
-              {showAll ? "Show Less" : "View All Projects"}
+            <FiArrowRight className="transition group-hover:translate-x-1" />
+          </Link>
 
-              {showAll ? (
-                <FiArrowUp />
-              ) : (
-                <FiArrowDown className="transition-transform group-hover:translate-y-1" />
-              )}
-            </button>
-          </motion.div>
-        )}
+        </div>
 
       </div>
     </section>

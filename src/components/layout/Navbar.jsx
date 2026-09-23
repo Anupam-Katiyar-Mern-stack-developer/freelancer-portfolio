@@ -102,10 +102,10 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <NavLink
-            to={"/contact"}
+            to={"/blog"}
             className="group inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-lg"
           >
-            Hire Me
+            Blogs
 
             <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </NavLink>

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 const useSiteData = () => {
   const siteState = useSelector((state) => state.site);
 
-  console.log("FULL SITE STATE:", siteState);
+  // console.log("FULL SITE STATE:", siteState);
 
   return {
     siteData: siteState?.data,

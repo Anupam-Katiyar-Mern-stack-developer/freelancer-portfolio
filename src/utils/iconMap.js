@@ -22,7 +22,12 @@ import {
   FiServer,
   FiDatabase,
   FiMonitor,
-  
+    
+  FiCode,
+ 
+  FiBriefcase,
+  FiSettings,
+ 
 } from "react-icons/fi";
 
 export const iconMap = {
@@ -46,5 +51,9 @@ export const iconMap = {
   FiActivity,
   FiDatabase,
   FiMonitor,
+    FiCode,
+ 
+  FiBriefcase,
+  FiSettings,
   
 };

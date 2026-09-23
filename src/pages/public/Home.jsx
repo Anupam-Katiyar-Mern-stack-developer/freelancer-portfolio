@@ -2,9 +2,11 @@ import HeroSection from "../../components/portfolio/HeroSection";
 import AboutSection from "../../components/portfolio/AboutSection";
 import SkillsSection from "../../components/portfolio/SkillsSection";
 import ProjectsSection from "../../components/portfolio/ProjectsSection";
-import CaseStudiesSection from "../../components/portfolio/CaseStudiesSection";
+// import CaseStudiesSection from "../../components/portfolio/CaseStudiesSection";
 import ReviewsSection from "../../components/portfolio/ReviewsSection";
-import ContactSection from "../../components/portfolio/ContactSection";
+import ServicesSection from "../../components/portfolio/ServicesSection";
+import CommonCTA from "../../components/common/CommonCTA";
+import FAQSection from "../../components/portfolio/FAQSection";
 
 const Home = () => {
   return (
@@ -12,10 +14,13 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
+      <ServicesSection />
       <ProjectsSection />
-      <CaseStudiesSection />
+      <FAQSection />
+      {/* <CaseStudiesSection /> */}
       <ReviewsSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
+      <CommonCTA />
     </main>
   );
 };

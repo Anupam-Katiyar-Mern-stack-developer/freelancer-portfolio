@@ -1,23 +1,22 @@
-import { motion } from "motion/react";
-
 import {
   FiArrowUpRight,
+  FiCheckCircle,
   FiMail,
   FiMapPin,
   FiPhone,
   FiSend,
 } from "react-icons/fi";
 
-import useContactForm from "../../hooks/useContactForm";
 import useSiteData from "../../hooks/useSiteData";
+import useContactForm from "../../hooks/useContactForm";
 
-import SectionTitle from "../common/SectionTitle";
-
-const ContactSection = () => {
+const ContactSection = ({ page = false }) => {
   const { siteData } = useSiteData();
 
   const {
     formData,
+    loading,
+    success,
     handleChange,
     handleSubmit,
   } = useContactForm();
@@ -28,573 +27,576 @@ const ContactSection = () => {
     return null;
   }
 
+  const getField = (name) =>
+    contact.fields?.find(
+      (field) => field.name === name
+    );
+
+  const nameField = getField("name");
+  const emailField = getField("email");
+  const companyField = getField("company");
+  const serviceField = getField("service");
+  const budgetField = getField("budget");
+  const messageField = getField("message");
+
+  const inputClass = `
+    w-full
+    rounded-2xl
+    border
+    border-slate-200
+    bg-slate-50
+    px-4
+    py-3.5
+    font-[Manrope]
+    text-sm
+    text-slate-900
+    outline-none
+    transition
+    duration-300
+
+    placeholder:text-slate-400
+
+    hover:border-slate-300
+
+    focus:border-blue-400
+    focus:bg-white
+    focus:ring-4
+    focus:ring-blue-100
+  `;
+
   return (
     <section
       id="contact"
-      className="
+      className={`
         relative
         overflow-hidden
         bg-[#F8FAFC]
         px-5
-        py-20
+        pb-20
 
         sm:px-8
-        sm:py-24
 
         lg:px-10
-        lg:py-32
-      "
+        lg:pb-28
+
+        ${
+          page
+            ? "pt-36 lg:pt-40"
+            : "pt-20 lg:pt-28"
+        }
+      `}
     >
-      {/* Background effects */}
+      {/* BACKGROUND */}
 
-      <div className="pointer-events-none absolute -left-40 top-24 h-[420px] w-[420px] rounded-full bg-blue-200/40 blur-[140px]" />
+      <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-blue-200/40 blur-[140px]" />
 
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-violet-200/40 blur-[140px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-violet-200/30 blur-[140px]" />
+
 
       <div className="relative mx-auto max-w-7xl">
 
-        <SectionTitle
-          eyebrow={contact.eyebrow}
-          title={contact.heading}
-          highlight={contact.highlight}
-          description={contact.description}
-        />
+        {/* SECTION HEADING */}
 
-        <div className="mt-14 grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
 
+          <span className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-4 py-2 font-[Manrope] text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
+            {contact.eyebrow}
+          </span>
+
+          <h2 className="mt-5 font-['Space_Grotesk'] text-4xl font-bold leading-tight tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-6xl">
+            {contact.heading}
+
+            <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              {contact.highlight}
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl font-[Manrope] text-sm leading-7 text-slate-500 sm:text-base">
+            {contact.description}
+          </p>
+
+        </div>
+
+
+        {/* CONTACT GRID */}
+
+        <div className="grid gap-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
+
+          {/* =========================== */}
           {/* LEFT */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: -35,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
-            transition={{
-              duration: 0.65,
-            }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[32px]
-              bg-slate-950
-              p-7
-              text-white
-              shadow-[0_30px_100px_rgba(15,23,42,0.20)]
+          {/* =========================== */}
 
-              sm:p-9
-            "
-          >
-            {/* glow */}
+          <div className="relative overflow-hidden rounded-[32px] bg-slate-950 p-7 text-white sm:p-9 lg:p-10">
 
-            <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/30 blur-[90px]" />
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-blue-500/20 blur-[100px]" />
 
-            <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-violet-500/20 blur-[90px]" />
+            <div className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-violet-500/20 blur-[110px]" />
 
-            <div className="relative">
+            <div className="relative flex h-full flex-col">
 
-              <span
-                className="
-                  inline-flex
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/5
-                  px-4
-                  py-2
-                  font-[Manrope]
-                  text-xs
-                  font-bold
-                  text-blue-300
-                  backdrop-blur-md
-                "
-              >
-                Available for new opportunities
-              </span>
+              <div>
 
-              <h3
-                className="
-                  mt-7
-                  font-['Space_Grotesk']
-                  text-3xl
-                  font-bold
-                  leading-tight
-                  tracking-[-0.04em]
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-2 font-[Manrope] text-xs font-bold text-emerald-300">
 
-                  sm:text-4xl
-                "
-              >
-                Let's create something
-                <span className="block text-blue-400">
-                  worth talking about.
+                  <span className="relative flex h-2 w-2">
+
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
+
+                    <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+
+                  </span>
+
+                  {contact.availability}
+
                 </span>
-              </h3>
 
-              <p
-                className="
-                  mt-5
-                  max-w-md
-                  font-[Manrope]
-                  text-sm
-                  leading-7
-                  text-slate-400
-                "
-              >
-                Whether you need a full-stack product, backend API or modern
-                business website, share your idea and let's discuss the right
-                solution.
-              </p>
 
-              {/* Contact details */}
+                <h3 className="mt-7 max-w-md font-['Space_Grotesk'] text-3xl font-bold leading-tight tracking-[-0.04em] sm:text-4xl">
+                  {contact.panelTitle}
+                </h3>
 
-              <div className="mt-10 space-y-4">
+
+                <p className="mt-4 max-w-md font-[Manrope] text-sm leading-7 text-slate-400">
+                  {contact.panelDescription}
+                </p>
+
+              </div>
+
+
+              {/* CONTACT DETAILS */}
+
+              <div className="mt-10 space-y-3">
+
+                {/* EMAIL */}
 
                 <a
                   href={`mailto:${contact.email}`}
-                  className="
-                    group
-                    flex
-                    items-center
-                    gap-4
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    p-4
-                    transition
-
-                    hover:border-blue-400/30
-                    hover:bg-white/[0.07]
-                  "
+                  className="group flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/[0.05] p-4 transition duration-300 hover:bg-white/[0.08]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-blue-300">
+
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-blue-300">
                     <FiMail />
-                  </span>
+                  </div>
+
 
                   <div className="min-w-0 flex-1">
-                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+
+                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
                       Email
                     </p>
 
                     <p className="mt-1 truncate font-[Manrope] text-sm font-semibold text-white">
                       {contact.email}
                     </p>
+
                   </div>
 
-                  <FiArrowUpRight className="text-slate-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-blue-300" />
+
+                  <FiArrowUpRight className="shrink-0 text-lg text-white/20 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" />
+
                 </a>
+
+
+                {/* PHONE */}
 
                 <a
                   href={`tel:${contact.phone}`}
-                  className="
-                    group
-                    flex
-                    items-center
-                    gap-4
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    p-4
-                    transition
-
-                    hover:border-blue-400/30
-                    hover:bg-white/[0.07]
-                  "
+                  className="group flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/[0.05] p-4 transition duration-300 hover:bg-white/[0.08]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-blue-300">
-                    <FiPhone />
-                  </span>
 
-                  <div className="flex-1">
-                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-blue-300">
+                    <FiPhone />
+                  </div>
+
+
+                  <div className="min-w-0 flex-1">
+
+                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
                       Phone
                     </p>
 
                     <p className="mt-1 font-[Manrope] text-sm font-semibold text-white">
                       {contact.phone}
                     </p>
+
                   </div>
 
-                  <FiArrowUpRight className="text-slate-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-blue-300" />
+
+                  <FiArrowUpRight className="shrink-0 text-lg text-white/20 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" />
+
                 </a>
 
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-4
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    p-4
-                  "
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-blue-300">
+
+                {/* LOCATION */}
+
+                <div className="flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/[0.05] p-4">
+
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-blue-300">
                     <FiMapPin />
-                  </span>
+                  </div>
 
                   <div>
-                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+
+                    <p className="font-[Manrope] text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
                       Location
                     </p>
 
                     <p className="mt-1 font-[Manrope] text-sm font-semibold text-white">
                       {contact.location}
                     </p>
+
                   </div>
+
                 </div>
 
               </div>
+
+
+              <div className="mt-auto pt-10">
+
+                <div className="border-t border-white/10 pt-6">
+
+                  <p className="font-[Manrope] text-xs leading-6 text-slate-500">
+                    {contact.bottomText}
+                  </p>
+
+                </div>
+
+              </div>
+
             </div>
-          </motion.div>
+
+          </div>
 
 
-          {/* FORM */}
+          {/* =========================== */}
+          {/* RIGHT FORM */}
+          {/* =========================== */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 35,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.65,
-            }}
-            className="
-              rounded-[32px]
-              border
-              border-slate-200
-              bg-white
-              p-6
-              shadow-[0_25px_80px_rgba(15,23,42,0.06)]
+          <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.06)] sm:p-8 lg:p-10">
 
-              sm:p-8
-              lg:p-10
-            "
-          >
+            <p className="font-[Manrope] text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
+              {contact.formEyebrow}
+            </p>
+
+
+            <h3 className="mt-3 font-['Space_Grotesk'] text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">
+              {contact.formHeading}
+            </h3>
+
+
+            <p className="mt-3 max-w-xl font-[Manrope] text-sm leading-7 text-slate-500">
+              {contact.formDescription}
+            </p>
+
+
+            {/* SUCCESS */}
+
+            {success && (
+              <div className="mt-6 flex gap-3 rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+
+                <FiCheckCircle className="mt-0.5 shrink-0 text-emerald-600" />
+
+                <div>
+
+                  <p className="font-[Manrope] text-sm font-bold text-emerald-800">
+                    {contact.success?.title}
+                  </p>
+
+                  <p className="mt-1 font-[Manrope] text-xs text-emerald-600">
+                    {contact.success?.description}
+                  </p>
+
+                </div>
+
+              </div>
+            )}
+
+
             <form
               onSubmit={handleSubmit}
-              className="grid gap-5 sm:grid-cols-2"
+              className="mt-8 grid gap-5 sm:grid-cols-2"
             >
 
-              {/* Name */}
+              {/* NAME */}
 
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Your Name
-                </label>
+              {nameField && (
+                <div>
 
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-3.5
-                    font-[Manrope]
-                    text-sm
-                    text-slate-900
-                    outline-none
-                    transition
+                  <label
+                    htmlFor={nameField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {nameField.label}
 
-                    placeholder:text-slate-400
+                    {nameField.required && (
+                      <span className="ml-1 text-red-500">
+                        *
+                      </span>
+                    )}
 
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                />
-              </div>
+                  </label>
 
-              {/* Email */}
+                  <input
+                    id={nameField.name}
+                    type={nameField.type}
+                    name={nameField.name}
+                    value={formData[nameField.name] || ""}
+                    onChange={handleChange}
+                    placeholder={nameField.placeholder}
+                    required={nameField.required}
+                    className={inputClass}
+                  />
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Email Address
-                </label>
+                </div>
+              )}
 
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="john@company.com"
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-3.5
-                    font-[Manrope]
-                    text-sm
-                    outline-none
-                    transition
 
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                />
-              </div>
+              {/* EMAIL */}
 
-              {/* Company */}
+              {emailField && (
+                <div>
 
-              <div>
-                <label
-                  htmlFor="company"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Company
-                  <span className="ml-1 font-medium text-slate-400">
-                    (optional)
-                  </span>
-                </label>
+                  <label
+                    htmlFor={emailField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {emailField.label}
 
-                <input
-                  id="company"
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Company name"
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-3.5
-                    font-[Manrope]
-                    text-sm
-                    outline-none
-                    transition
+                    {emailField.required && (
+                      <span className="ml-1 text-red-500">
+                        *
+                      </span>
+                    )}
 
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                />
-              </div>
+                  </label>
 
-              {/* Service */}
+                  <input
+                    id={emailField.name}
+                    type={emailField.type}
+                    name={emailField.name}
+                    value={formData[emailField.name] || ""}
+                    onChange={handleChange}
+                    placeholder={emailField.placeholder}
+                    required={emailField.required}
+                    className={inputClass}
+                  />
 
-              <div>
-                <label
-                  htmlFor="service"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Service Required
-                </label>
+                </div>
+              )}
 
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-3.5
-                    font-[Manrope]
-                    text-sm
-                    text-slate-600
-                    outline-none
-                    transition
 
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                >
-                  <option value="">
-                    Select service
-                  </option>
+              {/* COMPANY */}
 
-                  {contact.services?.map((service) => (
-                    <option
-                      key={service}
-                      value={service}
-                    >
-                      {service}
+              {companyField && (
+                <div>
+
+                  <label
+                    htmlFor={companyField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {companyField.label}
+                  </label>
+
+                  <input
+                    id={companyField.name}
+                    type={companyField.type}
+                    name={companyField.name}
+                    value={formData[companyField.name] || ""}
+                    onChange={handleChange}
+                    placeholder={companyField.placeholder}
+                    required={companyField.required}
+                    className={inputClass}
+                  />
+
+                </div>
+              )}
+
+
+              {/* SERVICE */}
+
+              {serviceField && (
+                <div>
+
+                  <label
+                    htmlFor={serviceField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {serviceField.label}
+
+                    {serviceField.required && (
+                      <span className="ml-1 text-red-500">
+                        *
+                      </span>
+                    )}
+
+                  </label>
+
+                  <select
+                    id={serviceField.name}
+                    name={serviceField.name}
+                    value={formData[serviceField.name] || ""}
+                    onChange={handleChange}
+                    required={serviceField.required}
+                    className={inputClass}
+                  >
+
+                    <option value="">
+                      {serviceField.placeholder}
                     </option>
-                  ))}
-                </select>
-              </div>
 
-              {/* Budget */}
+                    {serviceField.options?.map(
+                      (option) => (
+                        <option
+                          key={option}
+                          value={option}
+                        >
+                          {option}
+                        </option>
+                      )
+                    )}
 
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="budget"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Estimated Budget
-                </label>
+                  </select>
 
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-3.5
-                    font-[Manrope]
-                    text-sm
-                    text-slate-600
-                    outline-none
-                    transition
+                </div>
+              )}
 
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                >
-                  <option value="">
-                    Select budget
-                  </option>
 
-                  {contact.budgets?.map((budget) => (
-                    <option
-                      key={budget}
-                      value={budget}
-                    >
-                      {budget}
+              {/* BUDGET */}
+
+              {budgetField && (
+                <div className="sm:col-span-2">
+
+                  <label
+                    htmlFor={budgetField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {budgetField.label}
+                  </label>
+
+                  <select
+                    id={budgetField.name}
+                    name={budgetField.name}
+                    value={formData[budgetField.name] || ""}
+                    onChange={handleChange}
+                    required={budgetField.required}
+                    className={inputClass}
+                  >
+
+                    <option value="">
+                      {budgetField.placeholder}
                     </option>
-                  ))}
-                </select>
-              </div>
 
-              {/* Message */}
+                    {budgetField.options?.map(
+                      (option) => (
+                        <option
+                          key={option}
+                          value={option}
+                        >
+                          {option}
+                        </option>
+                      )
+                    )}
+
+                  </select>
+
+                </div>
+              )}
+
+
+              {/* MESSAGE */}
+
+              {messageField && (
+                <div className="sm:col-span-2">
+
+                  <label
+                    htmlFor={messageField.name}
+                    className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
+                  >
+                    {messageField.label}
+
+                    {messageField.required && (
+                      <span className="ml-1 text-red-500">
+                        *
+                      </span>
+                    )}
+
+                  </label>
+
+                  <textarea
+                    id={messageField.name}
+                    name={messageField.name}
+                    value={formData[messageField.name] || ""}
+                    onChange={handleChange}
+                    placeholder={messageField.placeholder}
+                    required={messageField.required}
+                    rows="6"
+                    className={`${inputClass} resize-none leading-7`}
+                  />
+
+                </div>
+              )}
+
+
+              {/* BUTTON */}
 
               <div className="sm:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="mb-2 block font-[Manrope] text-xs font-bold text-slate-700"
-                >
-                  Tell me about your project
-                </label>
 
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="6"
-                  placeholder="Tell me what you're planning to build, your goals and any important requirements..."
-                  className="
-                    w-full
-                    resize-none
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-slate-50
-                    px-4
-                    py-4
-                    font-[Manrope]
-                    text-sm
-                    leading-7
-                    outline-none
-                    transition
-
-                    focus:border-blue-400
-                    focus:bg-white
-                    focus:ring-4
-                    focus:ring-blue-100
-                  "
-                />
-              </div>
-
-              {/* Submit */}
-
-              <div className="sm:col-span-2">
                 <button
                   type="submit"
+                  disabled={loading}
                   className="
                     group
-                    flex
+                    inline-flex
                     w-full
                     items-center
                     justify-center
                     gap-3
                     rounded-2xl
                     bg-slate-950
-                    px-6
+                    px-7
                     py-4
                     font-[Manrope]
                     text-sm
                     font-bold
                     text-white
-                    shadow-xl
-                    shadow-slate-950/10
                     transition
                     duration-300
 
                     hover:-translate-y-1
                     hover:bg-blue-600
-                    hover:shadow-blue-500/20
+
+                    disabled:cursor-not-allowed
+                    disabled:opacity-60
 
                     sm:w-auto
-                    sm:px-8
                   "
                 >
-                  Send Project Request
 
-                  <FiSend className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  {loading ? (
+                    <>
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      {contact.submitText}
+
+                      <FiSend className="transition group-hover:translate-x-1" />
+                    </>
+                  )}
+
                 </button>
+
               </div>
 
             </form>
-          </motion.div>
+
+          </div>
 
         </div>
+
       </div>
     </section>
   );

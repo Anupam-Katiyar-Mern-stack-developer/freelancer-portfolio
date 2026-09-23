@@ -25,8 +25,8 @@
       "path": "/projects"
     },
     {
-      "label": "Case Studies",
-      "path": "/case-studies"
+      "label": "Service",
+      "path": "/Service"
     },
     {
       "label": "Contact",
@@ -422,11 +422,11 @@
     "copyright": "© 2026 Anupam Katiyar. All rights reserved.",
 
     "quickLinks": [
-      { "label": "About", "path": "#about" },
-      { "label": "Skills", "path": "#skills" },
-      { "label": "Projects", "path": "#projects" },
-      { "label": "Case Studies", "path": "#case-studies" },
-      { "label": "Contact", "path": "#contact" }
+      { "label": "About", "path": "/about" },
+      { "label": "Skills", "path": "/skills" },
+      { "label": "Projects", "path": "/projects" },
+      { "label": "Service", "path": "/service" },
+      { "label": "Contact", "path": "/contact" }
     ]
   },
 
@@ -623,9 +623,698 @@
       "button": "Start a Project",
       "link": "/contact?for=client"
     }
-  }
-,
+  },
+  "title": "Foodie Delivery Platform",
+  "slug": "foodie-delivery-platform",
+  "category": "Full Stack",
+  "shortDescription": "A multi-role food delivery platform with customer, restaurant, delivery agent and admin workflows.",
+  "image": "/projects/foodie.webp",
+  "featured": true,
 
+  "liveUrl": "#",
+  "githubUrl": "#",
+  "caseStudyUrl": "/case-studies/foodie-delivery-platform",
+
+  "technologies": [
+    "React",
+    "Redux Toolkit",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Socket.IO"
+  ],
+
+  "details": {
+    "eyebrow": "Featured Project",
+
+    "overview": "Foodie is a production-focused food delivery platform inspired by real-world ordering systems. The application connects customers, restaurants, delivery agents and administrators through dedicated workflows.",
+
+    "role": "Full Stack Developer",
+
+    "status": "In Development",
+
+    "year": "2026",
+
+    "duration": "Ongoing",
+
+    "features": [
+      "Customer authentication and profile management",
+      "Saved delivery addresses",
+      "Restaurant onboarding and admin approval",
+      "Restaurant food management",
+      "Cart and checkout workflow",
+      "Real-time order status updates",
+      "Delivery agent availability",
+      "Delivery assignment workflow",
+      "Role-based authentication",
+      "Admin management dashboard"
+    ],
+
+    "architecture": [
+      {
+        "label": "Frontend",
+        "value": "React + Redux Toolkit"
+      },
+      {
+        "label": "Backend",
+        "value": "Node.js + Express"
+      },
+      {
+        "label": "Database",
+        "value": "PostgreSQL"
+      },
+      {
+        "label": "Realtime",
+        "value": "Socket.IO"
+      },
+      {
+        "label": "Authentication",
+        "value": "JWT"
+      }
+    ],
+
+    "challenges": [
+      {
+        "title": "Multiple User Roles",
+        "description": "The application required separate permissions and workflows for customers, restaurants, delivery agents and administrators."
+      },
+      {
+        "title": "Order Lifecycle",
+        "description": "Order status needed to move through multiple stages while keeping every role synchronized."
+      },
+      {
+        "title": "Database Relationships",
+        "description": "Restaurants, food items, carts, addresses, orders and delivery assignments required structured relational modeling."
+      }
+    ],
+
+    "screenshots": [
+      "/projects/foodie.webp",
+      "/projects/foodie-dashboard.webp",
+      "/projects/foodie-restaurant.webp"
+    ]
+  },
+
+  
+ 
+  
+  "title": "Building a Multi-Role Food Delivery Platform",
+  "slug": "foodie-delivery-platform",
+  "projectSlug": "foodie-delivery-platform",
+  "image": "/projects/foodie.webp",
+  "category": "Full Stack Product",
+
+  "problem": "Managing customers, restaurants, admins and delivery agents in one connected system.",
+
+  "solution": "Designed a role-based architecture with REST APIs, PostgreSQL and real-time order updates.",
+
+  "impact": "Created a scalable workflow that supports the complete food ordering and delivery lifecycle.",
+
+  "technologies": [
+    "React",
+    "Redux Toolkit",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Socket.IO"
+  ],
+
+  "url": "/case-studies/foodie-delivery-platform",
+
+  "details": {
+    "subtitle": "Designing a scalable multi-role platform for customers, restaurants, delivery agents and administrators.",
+
+    "overview": "Foodie is a full-stack food delivery platform designed around real-world ordering and delivery workflows. The main challenge was connecting multiple user roles while keeping authentication, permissions, order state and database relationships manageable.",
+
+    "role": "Full Stack Developer",
+
+    "year": "2026",
+
+    "status": "In Development",
+
+    "duration": "Ongoing",
+
+    "requirements": [
+      "Customer registration, login and profile management",
+      "Saved delivery addresses",
+      "Restaurant registration and admin approval",
+      "Restaurant food management",
+      "Shopping cart",
+      "Order placement and status tracking",
+      "Delivery agent registration and availability",
+      "Delivery assignment",
+      "Real-time status updates",
+      "Role-based access control",
+      "Admin control over platform data"
+    ],
+
+    "responsibilities": [
+      "Backend system architecture",
+      "PostgreSQL database design",
+      "REST API development",
+      "Role-based authentication",
+      "Redux Toolkit integration",
+      "Real-time Socket.IO planning",
+      "Frontend and backend integration"
+    ],
+
+    "architecture": [
+      {
+        "step": "01",
+        "title": "React Client",
+        "description": "Customer, restaurant, delivery agent and admin interfaces."
+      },
+      {
+        "step": "02",
+        "title": "Redux Toolkit",
+        "description": "Global application state and async API workflows."
+      },
+      {
+        "step": "03",
+        "title": "Express API",
+        "description": "Authentication, validation and route handling."
+      },
+      {
+        "step": "04",
+        "title": "Service Layer",
+        "description": "Business rules and application workflows."
+      },
+      {
+        "step": "05",
+        "title": "PostgreSQL",
+        "description": "Relational data for users, restaurants, foods, carts and orders."
+      },
+      {
+        "step": "06",
+        "title": "Socket.IO",
+        "description": "Real-time order and delivery updates."
+      }
+    ],
+
+    "challenges": [
+      {
+        "title": "Four Different User Roles",
+        "problem": "Each role required different permissions, authentication flows and dashboard functionality.",
+        "solution": "Designed role-based middleware and separated workflows while keeping shared authentication patterns reusable."
+      },
+      {
+        "title": "Complex Order Lifecycle",
+        "problem": "Orders needed to move through multiple states across customer, restaurant and delivery interfaces.",
+        "solution": "Defined a controlled order-state workflow and planned real-time event synchronization through Socket.IO."
+      },
+      {
+        "title": "Relational Database Design",
+        "problem": "Restaurants, foods, users, addresses, carts, orders and delivery agents are heavily connected.",
+        "solution": "Used PostgreSQL relationships and structured models to keep the data consistent and easier to query."
+      }
+    ],
+
+    "solutionPoints": [
+      "Separated route, controller, service and model responsibilities",
+      "Used role-based authorization",
+      "Used PostgreSQL for relational business data",
+      "Used Redux Toolkit for predictable frontend state",
+      "Used secure slug-based public URLs",
+      "Designed APIs around reusable business workflows",
+      "Prepared the system for Socket.IO real-time events"
+    ],
+
+    "results": [
+      {
+        "value": "4",
+        "label": "User Roles"
+      },
+      {
+        "value": "10+",
+        "label": "Core Modules"
+      },
+      {
+        "value": "REST",
+        "label": "API Architecture"
+      },
+      {
+        "value": "Realtime",
+        "label": "Order Updates"
+      }
+    ],
+
+    "screenshots": [
+      "/projects/foodie.webp",
+      "/projects/foodie-dashboard.webp",
+      "/projects/foodie-restaurant.webp"
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "heading": "How I can help",
+    "highlight": "bring your idea to life.",
+    "description": "From frontend interfaces to complete full-stack products, I build modern, scalable and maintainable web applications.",
+
+    "items": [
+      {
+        "slug": "full-stack-development",
+        "title": "Full Stack Development",
+        "icon": "FiLayers",
+        "shortDescription": "Complete web applications covering frontend, backend, database and deployment.",
+        "description": "I build complete web products from user interfaces to backend APIs and databases with a structured, production-focused architecture.",
+        "bestFor": "Startups, SaaS products & business applications",
+        "features": [
+          "React frontend",
+          "Node.js & Express backend",
+          "PostgreSQL / MongoDB",
+          "Authentication & authorization",
+          "Admin dashboards",
+          "Deployment ready"
+        ]
+      },
+      {
+        "slug": "mern-stack-development",
+        "title": "MERN Stack Development",
+        "icon": "FiCode",
+        "shortDescription": "Modern MERN applications with reusable frontend and scalable backend architecture.",
+        "description": "I develop MERN applications using React, Node.js, Express and MongoDB with clean API integration and reusable application architecture.",
+        "bestFor": "Dashboards, portals & web products",
+        "features": [
+          "React applications",
+          "Redux Toolkit",
+          "Node.js APIs",
+          "MongoDB",
+          "JWT authentication",
+          "REST API integration"
+        ]
+      },
+      {
+        "slug": "frontend-development",
+        "title": "Frontend Development",
+        "icon": "FiMonitor",
+        "shortDescription": "Responsive, fast and modern interfaces built with React and Tailwind CSS.",
+        "description": "I convert designs and product ideas into responsive React interfaces focused on usability, performance and reusable components.",
+        "bestFor": "Landing pages, dashboards & React apps",
+        "features": [
+          "React",
+          "Tailwind CSS",
+          "Responsive design",
+          "Reusable components",
+          "Animations",
+          "API integration"
+        ]
+      },
+      {
+        "slug": "backend-development",
+        "title": "Backend & API Development",
+        "icon": "FiServer",
+        "shortDescription": "Secure REST APIs, authentication, databases and backend business workflows.",
+        "description": "I build structured backend systems using Node.js and Express with authentication, authorization, PostgreSQL and business logic.",
+        "bestFor": "APIs, mobile backends & business systems",
+        "features": [
+          "REST APIs",
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "JWT authentication",
+          "Role-based access"
+        ]
+      },
+      {
+        "slug": "business-websites",
+        "title": "Business Websites",
+        "icon": "FiBriefcase",
+        "shortDescription": "Professional websites designed to clearly present businesses, products and services.",
+        "description": "I create responsive business websites that communicate your services clearly and provide a professional experience across devices.",
+        "bestFor": "Businesses, agencies & personal brands",
+        "features": [
+          "Modern UI",
+          "Responsive pages",
+          "Contact forms",
+          "SEO-ready structure",
+          "Fast loading",
+          "Deployment"
+        ]
+      },
+      {
+        "slug": "maintenance-support",
+        "title": "Maintenance & Improvements",
+        "icon": "FiSettings",
+        "shortDescription": "Bug fixing, feature development and improvements for existing applications.",
+        "description": "I help improve existing applications by fixing issues, implementing new functionality and improving frontend or backend code.",
+        "bestFor": "Existing websites & web applications",
+        "features": [
+          "Bug fixing",
+          "New features",
+          "API fixes",
+          "UI improvements",
+          "Performance improvements",
+          "Code cleanup"
+        ]
+      }
+    ]
+  },
+
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Services",
+      "heading": "Development services",
+      "highlight": "focused on real products.",
+      "description": "Whether you need a complete application, backend API, React frontend or improvements to an existing product, I can help turn requirements into a maintainable solution."
+    },
+
+    "process": [
+      {
+        "number": "01",
+        "title": "Understand",
+        "description": "I understand the product, users, requirements and expected outcome."
+      },
+      {
+        "number": "02",
+        "title": "Plan",
+        "description": "I plan the frontend, backend, database and application workflow."
+      },
+      {
+        "number": "03",
+        "title": "Build",
+        "description": "I develop the product using reusable and maintainable architecture."
+      },
+      {
+        "number": "04",
+        "title": "Deliver",
+        "description": "I test, optimize and prepare the product for deployment."
+      }
+    ],
+
+    "cta": {
+      "heading": "Have a project you want to build?",
+      "description": "Tell me what you're planning and I'll help you turn the requirements into a working product.",
+      "button": "Discuss Your Project",
+      "link": "/contact?for=client"
+    }
+  },
+
+
+  "contactPage": {
+    "banner": {
+      "eyebrow": "Contact",
+      "title": "Let's build something together.",
+      "description": "Have a project in mind? Share your requirements and let's discuss how I can help bring your idea to life."
+    },
+
+    "contactCards": [
+      {
+        "type": "phone",
+        "label": "Call Me",
+        "value": "+91XXXXXXXXXX",
+        "description": "Available for project discussions",
+        "href": "tel:+91XXXXXXXXXX"
+      },
+      {
+        "type": "email",
+        "label": "Email Me",
+        "value": "your@email.com",
+        "description": "Send your project requirements",
+        "href": "mailto:your@email.com"
+      },
+      {
+        "type": "location",
+        "label": "Location",
+        "value": "India",
+        "description": "Available for remote projects",
+        "href": null
+      }
+    ],
+
+    "form": {
+      "eyebrow": "Project Inquiry",
+      "heading": "Tell me about your project.",
+      "description": "Share the important details and I'll get back to you.",
+
+      "submitText": "Send Request",
+
+      "image": "/images/contact/contact-developer.webp",
+
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "placeholder": "Your name",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "placeholder": "you@example.com",
+          "required": true
+        },
+        {
+          "name": "service",
+          "label": "Service",
+          "type": "select",
+          "placeholder": "Select service",
+          "required": true,
+          "options": [
+            "Full Stack Development",
+            "MERN Development",
+            "Frontend Development",
+            "Backend Development",
+            "Business Website"
+          ]
+        },
+        {
+          "name": "budget",
+          "label": "Budget",
+          "type": "select",
+          "placeholder": "Select budget",
+          "required": false,
+          "options": [
+            "Under ₹10,000",
+            "₹10,000 - ₹25,000",
+            "₹25,000 - ₹50,000",
+            "₹50,000+",
+            "Let's Discuss"
+          ]
+        },
+        {
+          "name": "message",
+          "label": "Project Details",
+          "type": "textarea",
+          "placeholder": "Briefly describe your project...",
+          "required": true
+        }
+      ]
+    }
+  },
+  "contactCards": [
+  {
+    "type": "phone",
+    "label": "Call Me",
+    "value": "+91XXXXXXXXXX",
+    "description": "Available for project discussions",
+    "href": "tel:+91XXXXXXXXXX"
+  },
+  {
+    "type": "email",
+    "label": "Email Me",
+    "value": "your@email.com",
+    "description": "Send your project requirements",
+    "href": "mailto:your@email.com"
+  },
+  {
+    "type": "location",
+    "label": "Location",
+    "value": "Kanpur, Uttar Pradesh, India",
+    "description": "Available for remote projects",
+    "href": null,
+    "latitude": null,
+    "longitude": null
+  }
+],
+
+  "commonCTA": {
+    "eyebrow": "Let's Work Together",
+    "heading": "Have an idea or project in mind?",
+    "highlight": "Let's build something valuable.",
+    "description": "Tell me what you're planning and let's discuss the best way to turn your idea into a fast, scalable and production-ready product.",
+    "primaryButton": {
+      "label": "Start a Project",
+      "path": "/contact"
+    },
+    "secondaryButton": {
+      "label": "Explore Projects",
+      "path": "/projects"
+    }
+  },
+  "blogs": {
+  "eyebrow": "Latest Articles",
+  "heading": "Thoughts, learnings &",
+  "highlight": "development insights.",
+  "description": "I share what I learn while building real-world frontend, backend and full-stack applications.",
+
+  "items": [
+    {
+      "title": "How I Structure a Production Ready Node.js Backend",
+      "slug": "production-ready-nodejs-backend-structure",
+      "excerpt": "A practical approach to organizing controllers, services, models, routes and middleware in a scalable Node.js backend.",
+      "image": "/blogs/node-backend.webp",
+      "category": "Backend",
+      "date": "September 20, 2026",
+      "readTime": "6 min read",
+      "featured": true
+    },
+    {
+      "title": "React Project Structure for Scalable Applications",
+      "slug": "react-project-structure-scalable-applications",
+      "excerpt": "Learn how to organize components, hooks, services, Redux and pages without making your React project unnecessarily complex.",
+      "image": "/blogs/react-structure.webp",
+      "category": "React",
+      "date": "September 15, 2026",
+      "readTime": "5 min read",
+      "featured": false
+    },
+    {
+      "title": "PostgreSQL Relationships Explained with Real Projects",
+      "slug": "postgresql-relationships-real-projects",
+      "excerpt": "Understand one-to-one, one-to-many and many-to-many relationships using practical application examples.",
+      "image": "/blogs/postgresql.webp",
+      "category": "Database",
+      "date": "September 10, 2026",
+      "readTime": "7 min read",
+      "featured": false
+    },
+    {
+      "title": "Building Role Based Authentication in MERN Applications",
+      "slug": "role-based-authentication-mern",
+      "excerpt": "A practical breakdown of authentication and authorization for users, admins and other application roles.",
+      "image": "/blogs/authentication.webp",
+      "category": "Full Stack",
+      "date": "September 5, 2026",
+      "readTime": "8 min read",
+      "featured": false
+    },
+    {
+      "title": "Redux Toolkit: When and Why I Use It",
+      "slug": "redux-toolkit-when-to-use",
+      "excerpt": "Understanding when global state is actually useful and how Redux Toolkit keeps application state predictable.",
+      "image": "/blogs/redux.webp",
+      "category": "Frontend",
+      "date": "August 28, 2026",
+      "readTime": "5 min read",
+      "featured": false
+    },
+    {
+      "title": "What I Learned Building a Food Delivery Platform",
+      "slug": "building-food-delivery-platform",
+      "excerpt": "Lessons from designing multi-role workflows, relational databases, order states and real-time application features.",
+      "image": "/blogs/foodie.webp",
+      "category": "Development",
+      "date": "August 20, 2026",
+      "readTime": "9 min read",
+      "featured": false
+    }
+  ]
+},
+  "title": "How I Structure a Production Ready Node.js Backend",
+  "slug": "production-ready-nodejs-backend-structure",
+  "excerpt": "A practical approach to organizing controllers, services, models, routes and middleware in a scalable Node.js backend.",
+  "image": "/blogs/node-backend.webp",
+  "category": "Backend",
+  "date": "September 20, 2026",
+  "readTime": "6 min read",
+  "featured": true,
+
+  "author": {
+    "name": "Anupam Katiyar",
+    "role": "Full Stack Developer"
+  },
+
+  "tags": [
+    "Node.js",
+    "Express",
+    "Backend",
+    "Architecture"
+  ],
+
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "When a Node.js project starts growing, putting controllers, database queries and business logic in the same file quickly makes the application difficult to maintain."
+    },
+    {
+      "type": "heading",
+      "text": "Why backend structure matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "A clean backend structure makes features easier to build, debug and scale. Every layer should have a clear responsibility."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Routes define endpoints",
+        "Controllers handle request and response",
+        "Services contain business logic",
+        "Models communicate with the database",
+        "Middleware handles authentication and validation"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The structure I prefer"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "code": "src/\n├── controllers/\n├── services/\n├── models/\n├── routes/\n├── middleware/\n├── utils/\n├── app.js\n└── server.js"
+    },
+    {
+      "type": "paragraph",
+      "text": "This separation keeps controllers small and prevents SQL or complex business logic from leaking into route files."
+    },
+    {
+      "type": "heading",
+      "text": "Final thoughts"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no single perfect folder structure. The important thing is maintaining clear responsibilities and avoiding unnecessary complexity."
+    }
+  ],
+  "faq": {
+  "eyebrow": "Frequently Asked Questions",
+  "heading": "Questions you may have",
+  "highlight": "before we start.",
+  "description": "Here are answers to some common questions about my development process, projects and collaboration.",
+
+  "image": "/images/faq/faq-developer.webp",
+
+  "imageBadge": "Have more questions?",
+
+  "items": [
+    {
+      "question": "What type of projects do you work on?",
+      "answer": "I work on full-stack web applications, MERN projects, backend APIs, business websites, dashboards and improvements to existing applications."
+    },
+    {
+      "question": "Can you build a complete project from frontend to backend?",
+      "answer": "Yes. I can work on the frontend, backend APIs, authentication, database integration, admin functionality and deployment workflow depending on the project requirements."
+    },
+    {
+      "question": "Which technologies do you mainly use?",
+      "answer": "My primary stack includes React, Redux Toolkit, Node.js, Express, PostgreSQL, MongoDB, Tailwind CSS and REST APIs."
+    },
+    {
+      "question": "Can you work on an existing project?",
+      "answer": "Yes. I can help with bug fixes, new features, API integration, backend improvements, UI improvements and code restructuring in existing applications."
+    },
+    {
+      "question": "How do we start a project?",
+      "answer": "You can share your requirements through the contact form. I first understand the project scope, features and goals, then we can discuss the technical approach and next steps."
+    },
+    {
+      "question": "Do you work on remote projects?",
+      "answer": "Yes. I can collaborate remotely and communicate throughout the development process for updates, requirements and feedback."
+    }
+  ]
+},
   "socialLinks": {
     "github": "https://github.com/",
     "linkedin": "https://linkedin.com/",

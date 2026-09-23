@@ -8,7 +8,7 @@ export const fetchSiteData = createAsyncThunk(
     try {
       const data = await getSiteDataApi();
 
-      console.log("THUNK RESPONSE:", data);
+      // console.log("THUNK RESPONSE:", data);
 
       // IMPORTANT
       return data;
@@ -44,7 +44,7 @@ const siteDataSlice = createSlice({
       })
 
       .addCase(fetchSiteData.fulfilled, (state, action) => {
-        console.log("FULFILLED PAYLOAD:", action.payload);
+        // console.log("FULFILLED PAYLOAD:", action.payload);
 
         state.loading = false;
 

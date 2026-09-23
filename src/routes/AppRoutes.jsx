@@ -6,13 +6,13 @@ import Home from "../pages/public/Home";
 import About from "../pages/public/About";
 import Skills from "../pages/public/Skills";
 import Projects from "../pages/public/Projects";
-// import ProjectDetails from "../pages/public/ProjectDetails";
-// import CaseStudies from "../pages/public/CaseStudies";
-// import CaseStudyDetails from "../pages/public/CaseStudyDetails";
+import ProjectDetails from "../pages/public/ProjectDetails";
+import Services from "../pages/public/Services";
 // import Reviews from "../pages/public/Reviews";
-// import Contact from "../pages/public/Contact";
-// import ReviewRequest from "../pages/public/ReviewRequest";
+import Contact from "../pages/public/Contact";
+import BlogDetails from "../pages/public/BlogDetails";
 import NotFound from "../pages/public/NotFound";
+import Blog from "../pages/public/Blog";
 
 const AppRoutes = () => {
   return (
@@ -37,31 +37,37 @@ const AppRoutes = () => {
           path="/projects"
           element={<Projects />}
         />
-{/* 
+
         <Route
           path="/projects/:slug"
           element={<ProjectDetails />}
         />
 
         <Route
-          path="/case-studies"
-          element={<CaseStudies />}
+          path="/service"
+          element={<Services />}
         />
 
-        <Route
-          path="/case-studies/:slug"
-          element={<CaseStudyDetails />}
-        />
-
-        <Route
-          path="/reviews"
-          element={<Reviews />}
-        />
 
         <Route
           path="/contact"
           element={<Contact />}
         />
+        <Route
+          path="/blog"
+          element={<Blog />}
+        />
+        <Route
+          path="/blog/:slug"
+          element={<BlogDetails />}
+        />
+        {/* 
+        <Route
+          path="/reviews"
+          element={<Reviews />}
+        />
+
+      
 
         <Route
           path="/review/:token"
@@ -71,7 +77,7 @@ const AppRoutes = () => {
         <Route
           path="*"
           element={<NotFound />}
-        /> 
+        />
       </Route>
     </Routes>
   );

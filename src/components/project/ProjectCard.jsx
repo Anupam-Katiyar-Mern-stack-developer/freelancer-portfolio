@@ -145,40 +145,45 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Floating Live Button */}
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="
-              absolute
-              bottom-4
-              right-4
-              flex
-              h-12
-              w-12
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-white/30
-              bg-white/90
-              text-lg
-              text-slate-900
-              shadow-xl
-              backdrop-blur-xl
-              transition
-              duration-300
 
-              hover:rotate-6
-              hover:scale-110
-              hover:bg-blue-600
-              hover:text-white
-            "
-          >
-            <FiExternalLink />
-          </a>
-        )}
+        <Link
+          to={`/projects/${project.slug}`}
+          aria-label={`View ${project.title}`}
+          className="
+    absolute
+    bottom-4
+    right-4
+
+    flex
+    h-12
+    w-12
+    items-center
+    justify-center
+
+    rounded-full
+    border
+    border-white/40
+
+    bg-white/90
+    text-lg
+    text-slate-900
+
+    shadow-xl
+    backdrop-blur-xl
+
+    transition-all
+    duration-300
+
+    hover:-translate-y-1
+    hover:rotate-6
+    hover:scale-110
+    hover:bg-blue-600
+    hover:text-white
+  "
+        >
+          <FiArrowUpRight />
+        </Link>
+
       </div>
 
       {/* CONTENT */}

@@ -3,9 +3,9 @@ import JourneySection from "../../components/about/JourneySection";
 import WhatIDoSection from "../../components/about/WhatIDoSection";
 import CareerSection from "../../components/about/CareerSection";
 import WorkProcess from "../../components/about/WorkProcess";
-import AboutCTA from "../../components/about/AboutCTA";
 
 import PageTransition from "../../components/common/PageTransition";
+import CommonCTA from "../../components/common/CommonCTA";
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
         <WhatIDoSection />
         <CareerSection />
         <WorkProcess />
-        <AboutCTA />
+        <CommonCTA />
       </main>
     </PageTransition>
   );

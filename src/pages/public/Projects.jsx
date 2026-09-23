@@ -1,18 +1,21 @@
 import PageTransition from "../../components/common/PageTransition";
 
-import ProjectsHero from "../../components/project/ProjectsHero";
+import PageBanner from "../../components/common/PageBanner";
 import AllProjectsSection from "../../components/project/AllProjectsSection";
-import ProjectsCTA from "../../components/project/ProjectsCTA";
+import CommonCTA from "../../components/common/CommonCTA";
 
 const Projects = () => {
   return (
     <PageTransition>
       <main>
-        <ProjectsHero />
+        <PageBanner
+          title="My Projects"
+          description="Explore selected products and applications I have designed and developed."
+        />
 
         <AllProjectsSection />
 
-        <ProjectsCTA />
+        <CommonCTA />
       </main>
     </PageTransition>
   );
