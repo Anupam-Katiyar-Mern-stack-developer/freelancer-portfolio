@@ -14,9 +14,15 @@ import BlogDetails from "../pages/public/BlogDetails";
 import NotFound from "../pages/public/NotFound";
 import Blog from "../pages/public/Blog";
 
+import AdminRoutes from "./AdminRoutes";
+
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route
+        path="/admin/*"
+        element={<AdminRoutes />}
+      />
       <Route element={<PublicLayout />}>
         <Route
           path="/"
@@ -61,6 +67,8 @@ const AppRoutes = () => {
           path="/blog/:slug"
           element={<BlogDetails />}
         />
+
+
         {/* 
         <Route
           path="/reviews"
